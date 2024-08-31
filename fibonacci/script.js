@@ -14,5 +14,19 @@ function findFibonacciNumbersIterative(n) {
     }
     return fibonacciArray;
 }
+// console.log(fibonacciIterative(1)); // [0, 1]
 
-console.log(fibonacciIterative(1));
+
+function fibonacciRecursive(n) {
+    return n <= 1 ? n : fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+}
+console.log(fibonacciRecursive(5)); //5
+
+function findFibonacciNumbersRecursive(n) {
+    const fibonacciNumbers = [];
+    for (let i = 0; i < n; i++){
+        fibonacciNumbers.push(fibonacciRecursive(i));
+    }
+    return fibonacciNumbers;
+}
+// console.log(findFibonacciNumbersRecursive(10)); //[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
