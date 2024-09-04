@@ -10,7 +10,15 @@ function merge(arr, start, mid, end) {
             arr[k++] = arr[p++];
         } else if (q > end) {
             arr[k++] = arr[p++];
-        } else if (arr[k++] = arr[])
+        } else if (arr[p] < arr[q]) {
+            arr[k++] = arr[p++];
+        } else {
+            arr[k++] = arr[q++];
+        }
+    }
+
+    for (let p = 0; p < k; p++) {
+        arr[start++] = arr[p];
     }
 }
 
