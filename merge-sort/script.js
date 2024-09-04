@@ -20,6 +20,7 @@ function merge(arr, start, mid, end) {
     for (let p = 0; p < k; p++) {
         arr[start++] = arr[p];
     }
+
 }
 
 
@@ -31,4 +32,9 @@ function mergeSort(arr, start, end) {
 
         merge(arr, start, mid, end);
     }
+    return arr;
 }
+
+let arr = [3, 2, 1, 13, 8, 5, 0, 1];
+
+console.log(mergeSort(arr, 0, 7));
