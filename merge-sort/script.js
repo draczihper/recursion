@@ -23,6 +23,12 @@ function merge(arr, start, mid, end) {
 }
 
 
-function mergeSort(arr, ) {
-    if ()
+function mergeSort(arr, start, end) {
+    if (start < end) {
+        let mid = (start + end) / 2;
+        mergeSort(arr, start, mid)
+        mergeSort(arr, mid+1, end);
+
+        merge(arr, start, mid, end);
+    }
 }
