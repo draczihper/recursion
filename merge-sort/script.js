@@ -1,25 +1,15 @@
 // Merge sort
 
-function merge(arr, start, mid, end) {
-    let p = start, q = mid + 1;
-    
-    arr[end - start+1], k = 0;
+function mergeSort(arr) {
+   if (arr.length <= 0) {
+    return arr;
+   }
 
-    for (let i = start; i <= end; i++){
-        if (p > mid) {
-            arr[k++] = arr[p++];
-        } else if (q > end) {
-            arr[k++] = arr[p++];
-        } else if (arr[p] < arr[q]) {
-            arr[k++] = arr[p++];
-        } else {
-            arr[k++] = arr[q++];
-        }
-    }
+   const mid = Math.floor(arr.length / 2);
+   const left = arr.slice(0, mid);
+   const right = arr.slice(mid);
 
-    for (let p = 0; p < k; p++) {
-        arr[start++] = arr[p];
-    }
+   return merge(mergeSort(right), mergeSort(left));
 
 }
 
