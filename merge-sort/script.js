@@ -9,22 +9,28 @@ function mergeSort(arr) {
    const left = arr.slice(0, mid);
    const right = arr.slice(mid);
 
-   return merge(mergeSort(right), mergeSort(left));
+   return merge(mergeSort(left), mergeSort(right));
 
 }
 
 
-function mergeSort(arr, start, end) {
-    if (start < end) {
-        let mid = (start + end) / 2;
-        mergeSort(arr, start, mid)
-        mergeSort(arr, mid+1, end);
+function merge(left, right) {
+   let sortedArray = [];
+   let i = 0, j = 0;
 
-        merge(arr, start, mid, end);
+   while(i < left.length && j < right.length) {
+    if (left[i] < right[j]) {
+        sortedArray.push(left[i]);
+        i++;
+    } else {
+        sortedArray.push(right[j]);
+        j++;
     }
-    return arr;
+   }
+
+   return sortedArray.concat(left.slice(i)).concat(right.slice(j));
 }
 
-let arr = [3, 2, 1, 13, 8, 5, 0, 1];
+let unsortedArray = [3, 2, 1, 13, 8, 5, 0, 1];
 
 console.log(mergeSort(arr, 0, 7));
