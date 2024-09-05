@@ -1,7 +1,7 @@
 // Merge sort
 
 function mergeSort(arr) {
-   if (arr.length <= 0) {
+   if (arr.length <= 1) {
     return arr;
    }
 
@@ -31,6 +31,6 @@ function merge(left, right) {
    return sortedArray.concat(left.slice(i)).concat(right.slice(j));
 }
 
-let unsortedArray = [3, 2, 1, 13, 8, 5, 0, 1];
+let unsortedArray = [105, 79, 100, 110];
 
-console.log(mergeSort(arr, 0, 7));
+console.log(mergeSort(unsortedArray));
